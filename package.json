@@ -10,7 +10,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -23,6 +23,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "jest": "^23.6.0",
     "tachyons": "^4.10.0"
   }
 }
