@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Cloning Repository
 `git clone https://github.com/kaibrabo/react-bikerfriends.git`
-# Then
+## Then
 `npm install`
 
 ## Starting the Server
