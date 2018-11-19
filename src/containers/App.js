@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
-import Scroll from '../components/Scroll';
-import './app.css';
+import Scroll from "../components/Scroll";
+import ErrorBoundary from "../components/ErrorBoundary";
+import "./app.css";
 
 class App extends Component {
     constructor() {
@@ -36,18 +37,20 @@ class App extends Component {
         });
 
         // ternary
-        return !friends.length ?
-
-        // render loading view
-        <h1 className='tc header-title'>LOADING...</h1> :
-        
-        // render app view
-        (
+        return !friends.length ? (
+            // render loading view
+            <h1 className="tc header-title">LOADING...</h1>
+        ) : (
+            // render app view
             <div className="tc">
                 <h1 className="header-title">Biker Friends</h1>
+                
                 <SearchBox searchChange={this.onSearchChange} />
+
                 <Scroll>
-                    <CardList friends={filteredFriends} />
+                    <ErrorBoundary>                    
+                        <CardList friends={filteredFriends} />
+                    </ErrorBoundary>
                 </Scroll>
             </div>
         );
