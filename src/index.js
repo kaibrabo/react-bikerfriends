@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './containers/App';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import { logger } from 'redux-logger';
 import { searchFriends } from './reducers';
 import './index.css';
 import 'tachyons';
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(searchFriends)
+const store = createStore(searchFriends, applyMiddleware(logger));
 
 ReactDOM.render(
       <Provider store={store}>
