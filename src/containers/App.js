@@ -1,16 +1,29 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll";
 import ErrorBoundary from "../components/ErrorBoundary";
+import { setSearchField } from "../actions";
 import "./app.css";
+
+const mapStateToProps = state => {
+    return {
+        searchField: state.searchField
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onSearchChange: event => dispatch(setSearchField(event.target.value))
+    };
+};
 
 class App extends Component {
     constructor() {
         super(); // required for state
         this.state = {
-            friends: [],
-            searchfield: ""
+            friends: []
         };
     }
 
@@ -21,19 +34,15 @@ class App extends Component {
             .then(users => this.setState({ friends: users }));
     }
 
-    onSearchChange = event => {
-        // trigger & collects text input
-        this.setState({ searchfield: event.target.value });
-    };
-
     render() {
         // destructure this.state obj.
-        const { friends, searchfield } = this.state;
+        const { friends } = this.state;
+        const { searchField, onSearchChange } = this.props;
         // filter friends result while typing
         const filteredFriends = friends.filter(friend => {
             return friend.name
                 .toLowerCase()
-                .includes(searchfield.toLowerCase());
+                .includes(searchField.toLowerCase());
         });
 
         // ternary
@@ -44,11 +53,11 @@ class App extends Component {
             // render app view
             <div className="tc">
                 <h1 className="header-title">Biker Friends</h1>
-                
-                <SearchBox searchChange={this.onSearchChange} />
+
+                <SearchBox searchChange={onSearchChange} />
 
                 <Scroll>
-                    <ErrorBoundary>                    
+                    <ErrorBoundary>
                         <CardList friends={filteredFriends} />
                     </ErrorBoundary>
                 </Scroll>
@@ -57,4 +66,7 @@ class App extends Component {
     }
 }
 
-export default App;
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);
