@@ -3,15 +3,17 @@ import ReactDOM from "react-dom";
 import App from "./containers/App";
 import thunkMiddleware from "redux-thunk";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, combineReducers } from "redux";
 import { logger } from "redux-logger";
-import { searchFriends } from "./reducers";
+import { searchFriends, requestFriends } from "./reducers";
 import "./index.css";
 import "tachyons";
 import * as serviceWorker from "./serviceWorker";
 
+const rootReducer = combineReducers({ searchFriends, requestFriends });
+
 const store = createStore(
-    searchFriends,
+    rootReducer,
     applyMiddleware(thunkMiddleware, logger)
 );
 
