@@ -20,5 +20,8 @@ export const requestFriends = dispatch => {
             type: REQUEST_FRIENDS_SUCCESS,
             payload: data
         }))
-        .catch(error => dispatch({ type: REQUEST_FRIENDS_FAILED }));
+        .catch(error => dispatch({ 
+            type: REQUEST_FRIENDS_FAILED,
+            payload: error
+        }));
 };
