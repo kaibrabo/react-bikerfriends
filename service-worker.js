@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/react-bikerfriends/precache-manifest.d3731df28d2148930d457cdfa01db6d4.js"
+  "/react-bikerfriends/precache-manifest.89da98fb85166778fbf01881ed4439e5.js"
 );
 
 workbox.clientsClaim();
