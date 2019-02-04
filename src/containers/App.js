@@ -4,6 +4,7 @@ import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll";
 import ErrorBoundary from "../components/ErrorBoundary";
+import Header from "../components/Header";
 import { setSearchField, requestFriends } from "../actions";
 import "./app.css";
 
@@ -44,7 +45,7 @@ class App extends Component {
         ) : (
             // render app view
             <div className="tc">
-                <h1 className="header-title">Biker Friends</h1>
+                <Header />
 
                 <SearchBox searchChange={onSearchChange} />
 
