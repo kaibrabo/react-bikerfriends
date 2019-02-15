@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CounterButton from './CounterButton';
 import "./Header.css";
 
 class Header extends Component {
@@ -9,7 +10,13 @@ class Header extends Component {
 
     render() {
         console.log("Header");
-        return <h1 className="header-title">Robot Friends</h1>;
+        return (
+            <div className="header">
+                <h1 className="header-title">Robot Friends</h1>
+                <CounterButton color={'white'}/>
+            </div>
+        );
+            
     }
 }
 
