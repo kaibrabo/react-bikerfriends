@@ -14,7 +14,7 @@ const rootReducer = combineReducers({ searchFriends, requestFriends });
 
 const store = createStore(
     rootReducer,
-    applyMiddleware(thunkMiddleware, logger)
+    applyMiddleware(thunkMiddleware)
 );
 
 ReactDOM.render(

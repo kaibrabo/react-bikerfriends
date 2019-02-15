@@ -11,7 +11,7 @@ export const setSearchField = text => ({
     payload: text
 });
 
-export const requestFriends = dispatch => {
+export const requestFriends = () => dispatch => {
     dispatch({ type: REQUEST_FRIENDS_PENDING });
 
     fetch("https://jsonplaceholder.typicode.com/users")

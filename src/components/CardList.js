@@ -3,6 +3,7 @@ import Card from "./Card";
 
 // cards collection view
 const CardList = ({ friends }) => {
+    console.log("cardlist");
     return (
         <div>
             {friends.map((u, i) => {

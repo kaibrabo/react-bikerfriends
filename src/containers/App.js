@@ -4,40 +4,33 @@ import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll";
 import ErrorBoundary from "../components/ErrorBoundary";
-import { setSearchField } from "../actions";
+import Header from "../components/Header";
+import { setSearchField, requestFriends } from "../actions";
 import "./app.css";
 
 const mapStateToProps = state => {
     return {
-        searchField: state.searchFriends.searchField
+        searchField: state.searchFriends.searchField,
+        friends: state.requestFriends.friends,
+        isPending: state.requestFriends.isPending,
+        error: state.requestFriends.error
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        onSearchChange: event => dispatch(setSearchField(event.target.value))
+        onSearchChange: event => dispatch(setSearchField(event.target.value)),
+        onRequestFriends: () => dispatch(requestFriends())
     };
 };
 
 class App extends Component {
-    constructor() {
-        super(); // required for state
-        this.state = {
-            friends: []
-        };
-    }
-
     componentDidMount() {
-        // fetch users data, then creates users; fetch is a method on the window obj.
-        fetch("https://jsonplaceholder.typicode.com/users")
-            .then(res => res.json()) // converts response to json
-            .then(users => this.setState({ friends: users }));
+        this.props.onRequestFriends();
     }
 
     render() {
-        // destructure this.state obj.
-        const { friends } = this.state;
-        const { searchField, onSearchChange } = this.props;
+        const { searchField, onSearchChange, friends, isPending } = this.props;
         // filter friends result while typing
         const filteredFriends = friends.filter(friend => {
             return friend.name
@@ -46,13 +39,13 @@ class App extends Component {
         });
 
         // ternary
-        return !friends.length ? (
+        return isPending ? (
             // render loading view
             <h1 className="tc header-title">LOADING...</h1>
         ) : (
             // render app view
             <div className="tc">
-                <h1 className="header-title">Biker Friends</h1>
+                <Header />
 
                 <SearchBox searchChange={onSearchChange} />
 
