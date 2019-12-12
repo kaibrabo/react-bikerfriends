@@ -1,15 +1,24 @@
 {
-  "main.css": "/react-bikerfriends/static/css/main.fd6f69d3.chunk.css",
-  "main.js": "/react-bikerfriends/static/js/main.a9a089ea.chunk.js",
-  "main.js.map": "/react-bikerfriends/static/js/main.a9a089ea.chunk.js.map",
-  "static/css/1.1fd05f85.chunk.css": "/react-bikerfriends/static/css/1.1fd05f85.chunk.css",
-  "static/js/1.b9f0ebf0.chunk.js": "/react-bikerfriends/static/js/1.b9f0ebf0.chunk.js",
-  "static/js/1.b9f0ebf0.chunk.js.map": "/react-bikerfriends/static/js/1.b9f0ebf0.chunk.js.map",
-  "runtime~main.js": "/react-bikerfriends/static/js/runtime~main.036b6af8.js",
-  "runtime~main.js.map": "/react-bikerfriends/static/js/runtime~main.036b6af8.js.map",
-  "static/css/1.1fd05f85.chunk.css.map": "/react-bikerfriends/static/css/1.1fd05f85.chunk.css.map",
-  "static/css/main.fd6f69d3.chunk.css.map": "/react-bikerfriends/static/css/main.fd6f69d3.chunk.css.map",
-  "index.html": "/react-bikerfriends/index.html",
-  "precache-manifest.89da98fb85166778fbf01881ed4439e5.js": "/react-bikerfriends/precache-manifest.89da98fb85166778fbf01881ed4439e5.js",
-  "service-worker.js": "/react-bikerfriends/service-worker.js"
+  "files": {
+    "main.css": "/react-bikerfriends/static/css/main.cea4c5eb.chunk.css",
+    "main.js": "/react-bikerfriends/static/js/main.5b1222f6.chunk.js",
+    "main.js.map": "/react-bikerfriends/static/js/main.5b1222f6.chunk.js.map",
+    "runtime-main.js": "/react-bikerfriends/static/js/runtime-main.6c34928a.js",
+    "runtime-main.js.map": "/react-bikerfriends/static/js/runtime-main.6c34928a.js.map",
+    "static/css/2.eb45ad44.chunk.css": "/react-bikerfriends/static/css/2.eb45ad44.chunk.css",
+    "static/js/2.dc19eef9.chunk.js": "/react-bikerfriends/static/js/2.dc19eef9.chunk.js",
+    "static/js/2.dc19eef9.chunk.js.map": "/react-bikerfriends/static/js/2.dc19eef9.chunk.js.map",
+    "index.html": "/react-bikerfriends/index.html",
+    "precache-manifest.b9865933a9ac7b9116a6b82455f7aaad.js": "/react-bikerfriends/precache-manifest.b9865933a9ac7b9116a6b82455f7aaad.js",
+    "service-worker.js": "/react-bikerfriends/service-worker.js",
+    "static/css/2.eb45ad44.chunk.css.map": "/react-bikerfriends/static/css/2.eb45ad44.chunk.css.map",
+    "static/css/main.cea4c5eb.chunk.css.map": "/react-bikerfriends/static/css/main.cea4c5eb.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6c34928a.js",
+    "static/css/2.eb45ad44.chunk.css",
+    "static/js/2.dc19eef9.chunk.js",
+    "static/css/main.cea4c5eb.chunk.css",
+    "static/js/main.5b1222f6.chunk.js"
+  ]
 }
