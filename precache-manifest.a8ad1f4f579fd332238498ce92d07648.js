@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "81997d9d96e41890e326d6df3d5f2dee",
+    "revision": "9e5971cf878cc40efcd8fffaef6ff5f5",
     "url": "/react-bikerfriends/index.html"
   },
   {

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react-bikerfriends/precache-manifest.b9865933a9ac7b9116a6b82455f7aaad.js"
+  "/react-bikerfriends/precache-manifest.a8ad1f4f579fd332238498ce92d07648.js"
 );
 
 self.addEventListener('message', (event) => {
