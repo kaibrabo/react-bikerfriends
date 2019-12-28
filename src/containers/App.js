@@ -9,11 +9,12 @@ import { setSearchField, requestFriends } from "../actions";
 import "./app.css";
 
 const mapStateToProps = state => {
+    const {searchFriends, requestFriends} = state;
     return {
-        searchField: state.searchFriends.searchField,
-        friends: state.requestFriends.friends,
-        isPending: state.requestFriends.isPending,
-        error: state.requestFriends.error
+        searchField: searchFriends.searchField,
+        friends: requestFriends.friends,
+        isPending: requestFriends.isPending,
+        error: requestFriends.error
     };
 };
 
@@ -33,9 +34,10 @@ class App extends Component {
         const { searchField, onSearchChange, friends, isPending } = this.props;
         // filter friends result while typing
         const filteredFriends = friends.filter(friend => {
+            // compares each typed letter to the friends names
             return friend.name
                 .toLowerCase()
-                .includes(searchField.toLowerCase());
+                .includes(searchField.toLowerCase());   
         });
 
         // ternary
@@ -44,7 +46,7 @@ class App extends Component {
             <h1 className="tc header-title">LOADING...</h1>
         ) : (
             // render app view
-            <div className="tc">
+            <main className="tc">
                 <Header />
 
                 <SearchBox searchChange={onSearchChange} />
@@ -54,7 +56,7 @@ class App extends Component {
                         <CardList friends={filteredFriends} />
                     </ErrorBoundary>
                 </Scroll>
-            </div>
+            </main>
         );
     }
 }
